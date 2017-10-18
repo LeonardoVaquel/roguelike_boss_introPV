@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D item){
 		// Se inicializa el objeto actual cuando el player coliciona con el item.
 		if (item.CompareTag ("Item")) {
-			Debug.Log (item.name);
+			//Debug.Log (item.name);
 			currentObject = item.gameObject;
 			interactionObjectScript	= currentObject.GetComponent<InteractionObject> ();
 		}

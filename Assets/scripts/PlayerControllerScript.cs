@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControllerScript : MonoBehaviour {
 
 	public float speed = 5f;
+	public int health = 10;
 	public Animator animator;
 	public Rigidbody2D rigidBody;
 	public Collider2D collider;
@@ -19,6 +20,7 @@ public class PlayerControllerScript : MonoBehaviour {
 	void FixedUpdate (){
 		this.checkMovement ();
 		this.checkAnimation ();
+		this.checkHealth ();
 	}
 
 	void checkMovement(){
@@ -48,5 +50,16 @@ public class PlayerControllerScript : MonoBehaviour {
 	void stopWalkingAnimation(){
 		this.animator.SetBool ("walking", false);
 	}
+
+	void checkHealth(){
+		if (health > 0) {
+			//health = health - 1;
+			//Debug.Log ("Tu vida actual es de " + health);
+		} else {
+			//Debug.Log ("MORISTE");
+		}
+	}
+
+
 
 }

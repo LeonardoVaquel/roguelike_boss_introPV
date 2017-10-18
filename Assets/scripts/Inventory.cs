@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour {
 
 	public GameObject[] inventory = new GameObject[10];
 	public Button[] InventoryButtons = new Button[10];
+	public Text console;
 
 	public void AddItem(GameObject item){
 		bool itemAdded	= false;
@@ -16,7 +17,8 @@ public class Inventory : MonoBehaviour {
 				inventory [i] = item;
 				// Actualizar GUI.
 				InventoryButtons[i].image.overrideSprite = item.GetComponent<SpriteRenderer>().sprite;
-				Debug.Log (item.name + " se agrego a tu inventario.");
+				console.text = "Se agrego " + item.name + " a tu inventario.";
+				//Debug.Log (item.name + " se agrego a tu inventario.");
 				itemAdded	= true;
 				// Se elimina el item.
 				item.SendMessage ("DoInteraction");
@@ -25,7 +27,7 @@ public class Inventory : MonoBehaviour {
 		}
 		// El inventario esta lleno.
 		if(!itemAdded){
-			Debug.Log("¡El inventario esta lleno!");
+			console.text = "¡El inventario esta lleno!";
 		}
 	}
 
@@ -59,7 +61,6 @@ public class Inventory : MonoBehaviour {
 			}
 		}
 	}
-
 
 
 
