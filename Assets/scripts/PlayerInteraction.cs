@@ -7,10 +7,12 @@ public class PlayerInteraction : MonoBehaviour {
 	public GameObject currentObject	= null;
 	public InteractionObject interactionObjectScript = null;
 	public Inventory inventory;
+	public AudioSource audio;
 
 	void start(){
 		this.inventory	= GetComponent<Inventory> ();
 		this.interactionObjectScript = currentObject.GetComponent<InteractionObject> ();
+		this.audio = GetComponent<AudioSource> ();
 	}
 
 	// Update is called once per frame
@@ -18,6 +20,7 @@ public class PlayerInteraction : MonoBehaviour {
 		if (Input.GetButtonDown("Interact") && currentObject) { // La tecla X sirve para interactuar.
 			// Ver si el item ya esta almacenado.
 			if(interactionObjectScript.inventory){
+				audio.Play ();
 				inventory.AddItem (currentObject);
 			}
 		}

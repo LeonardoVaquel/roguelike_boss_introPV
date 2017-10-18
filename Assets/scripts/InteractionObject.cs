@@ -8,7 +8,7 @@ public class InteractionObject : MonoBehaviour {
 	public string itemType;
 
 	void start(){
-
+		
 	}
 	public void DoInteraction(){
 		gameObject.SetActive (false);
