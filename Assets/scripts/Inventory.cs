@@ -17,7 +17,7 @@ public class Inventory : MonoBehaviour {
 				inventory [i] = item;
 				// Actualizar GUI.
 				InventoryButtons[i].image.overrideSprite = item.GetComponent<SpriteRenderer>().sprite;
-				console.text = "Se agrego " + item.name + " a tu inventario.";
+				console.text = "Se agrego " + item.name + " al inventario.";
 				//Debug.Log (item.name + " se agrego a tu inventario.");
 				itemAdded	= true;
 				// Se elimina el item.
