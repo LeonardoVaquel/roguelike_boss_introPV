@@ -14,13 +14,13 @@ public class EnemyController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		rigidBody.velocity = new Vector2 (-2, rigidBody.velocity.y);
+	void FixedUpdate () {
+		rigidBody.velocity = new Vector2 (-2, 0);
 	}
 
-	void OnColliderEnter2D(Collider col){
-		if (col.tag == "Limit") {
-			rigidBody.AddForce (new Vector2 (-2, 0));
+	void OnCollisionEnter2D(Collision2D collision){
+		if (collision.gameObject.tag == "Limit"){
+			rigidBody.velocity = new Vector2(10,0);
 		}
 
 	}
