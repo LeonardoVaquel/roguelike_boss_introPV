@@ -6,6 +6,7 @@ public class PlayerControllerScript : MonoBehaviour {
 
 	public float speed = 5f;
 	public int health = 10;
+	public bool isAttacking = false;
 	public Animator animator;
 	public Rigidbody2D rigidBody;
 	public Collider2D collider;
@@ -20,6 +21,7 @@ public class PlayerControllerScript : MonoBehaviour {
 	void FixedUpdate (){
 		this.checkMovement ();
 		this.checkAnimation ();
+		this.checkIsAttacking ();
 		this.checkHealth ();
 	}
 
@@ -44,6 +46,15 @@ public class PlayerControllerScript : MonoBehaviour {
 		if (this.collider.gameObject.tag == "Limit"){
 			rigidBody.velocity = new Vector2(0,0);
 			this.stopWalkingAnimation ();
+		}
+	}
+
+	void checkIsAttacking(){
+		if (Input.GetButtonDown ("Attack")) {
+			this.animator.SetBool ("isAttacking", true);
+		}
+		if (Input.GetButtonUp ("Attack")) {
+			this.animator.SetBool ("isAttacking", false);
 		}
 	}
 
