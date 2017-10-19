@@ -6,7 +6,7 @@ public class PlayerControllerScript : MonoBehaviour {
 
 	public float speed = 5f;
 	public int health = 10;
-	public bool isAttacking = false;
+	public AudioSource audio;
 	public Animator animator;
 	public Rigidbody2D rigidBody;
 	public Collider2D collider;
@@ -16,6 +16,7 @@ public class PlayerControllerScript : MonoBehaviour {
 		this.animator.GetComponent<Animator> ();
 		this.rigidBody.GetComponent<Rigidbody2D> ();
 		this.collider.GetComponent<Collider2D> ();
+		this.audio.GetComponent<AudioSource> ();
 	}
 
 	void FixedUpdate (){
@@ -52,6 +53,7 @@ public class PlayerControllerScript : MonoBehaviour {
 	void checkIsAttacking(){
 		if (Input.GetButtonDown ("Attack")) {
 			this.animator.SetBool ("isAttacking", true);
+			this.audio.Play ();
 		}
 		if (Input.GetButtonUp ("Attack")) {
 			this.animator.SetBool ("isAttacking", false);
