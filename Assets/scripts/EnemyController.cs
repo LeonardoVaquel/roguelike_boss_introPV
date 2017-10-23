@@ -10,6 +10,9 @@ public class EnemyController : MonoBehaviour {
     public GameObject enemy;
     public Animator playerAnimator;
     public SpriteRenderer enemySpriteRenderer;
+    // deberia ir en otro controller (de stats de mostro por ej...)
+    public int hp = 30;
+    public int exp = 10;
 
     // Use this for initialization
     void Start() {
@@ -25,10 +28,10 @@ public class EnemyController : MonoBehaviour {
     void FixedUpdate() {
         followPlayer();
         lookTowardPlayer();
+        dissapearWhenDead();
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("saranga");
         rigidBody.velocity = new Vector2(0, 0);
     }
 
@@ -45,9 +48,18 @@ public class EnemyController : MonoBehaviour {
     void lookTowardPlayer() {
         if (enemy.transform.position.x < player.transform.position.x) {
             enemySpriteRenderer.flipX = true;
+         //   Debug.Log("xq no me doy vuelta???");
         }
         else {
+            //Debug.Log("que pasa???");
             enemySpriteRenderer.flipX = false;
+        }
+    }
+
+    void dissapearWhenDead() {
+        //TODO: que se desvanezca (efecto)
+        if (hp <= 0) {
+            this.gameObject.SetActive(false); ;
         }
     }
 }
