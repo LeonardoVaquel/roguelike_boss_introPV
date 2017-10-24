@@ -24,7 +24,6 @@ public class PlayerActionsController : MonoBehaviour {
 
     void OnCollisionStay2D(Collision2D collision) {
         if (MeleeAttackAtEnemy(collision)) {
-            Debug.Log("wacho me atacan ");
             GameObject enemy = collision.gameObject;
             MeleeAttack(enemy);
         }
@@ -78,7 +77,7 @@ public class PlayerActionsController : MonoBehaviour {
         }
     }
     */
-    private void recalculateStats() {
-
+    public void receiveAttack(int damage) {
+        stats.hp -= damage;
     }
 }
