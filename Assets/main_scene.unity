@@ -25875,8 +25875,11 @@ MonoBehaviour:
   enemy: {fileID: 0}
   playerAnimator: {fileID: 0}
   enemySpriteRenderer: {fileID: 0}
+  collisionTimer: 0
+  collissionThreshold: 1
   hp: 30
   exp: 10
+  damage: 10
 --- !u!1 &1483969813
 GameObject:
   m_ObjectHideFlags: 0
