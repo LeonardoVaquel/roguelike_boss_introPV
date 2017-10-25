@@ -24,6 +24,20 @@ public class PlayerInteraction : MonoBehaviour {
 				inventory.AddItem (currentObject);
 			}
 		}
+		checkIfUseItem ();
+	}
+
+	void checkIfUseItem(){
+		if(Input.GetKeyDown(KeyCode.Alpha1)){inventory.UseItem (0);}
+		if(Input.GetKeyDown(KeyCode.Alpha2)){inventory.UseItem (1);}
+		if(Input.GetKeyDown(KeyCode.Alpha3)){inventory.UseItem (2);}
+		if(Input.GetKeyDown(KeyCode.Alpha4)){inventory.UseItem (3);}
+		if(Input.GetKeyDown(KeyCode.Alpha5)){inventory.UseItem (4);}
+		if(Input.GetKeyDown(KeyCode.Alpha6)){inventory.UseItem (5);}
+		if(Input.GetKeyDown(KeyCode.Alpha7)){inventory.UseItem (6);}
+		if(Input.GetKeyDown(KeyCode.Alpha8)){inventory.UseItem (7);}
+		if(Input.GetKeyDown(KeyCode.Alpha9)){inventory.UseItem (8);}
+		if(Input.GetKeyDown(KeyCode.Alpha0)){inventory.UseItem (9);}
 	}
 
 	void OnTriggerEnter2D(Collider2D item){

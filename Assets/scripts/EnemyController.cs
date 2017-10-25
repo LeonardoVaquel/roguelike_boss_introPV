@@ -69,10 +69,10 @@ public class EnemyController : MonoBehaviour {
     void followPlayer() {
         Vector2 player2Position = new Vector2(player.transform.position.x, player.transform.position.y);
         Vector2 offset = new Vector2(0.75f, 0);
-        if (playerAnimator.GetBool("walking") || playerAnimator.GetBool("isAttacking")) {
+       // if (playerAnimator.GetBool("walking") || playerAnimator.GetBool("isAttacking")) {
             // current, target (offset para que no se pisen los prites), velocity
             transform.position = Vector2.MoveTowards(transform.position, (player2Position + offset), 0.05f);
-        }
+        //}
     }
     // enemy always looks at the direction of the player
     void lookTowardPlayer() {

@@ -12773,6 +12773,7 @@ GameObject:
   - component: {fileID: 728766164}
   - component: {fileID: 728766165}
   - component: {fileID: 728766166}
+  - component: {fileID: 728766167}
   m_Layer: 0
   m_Name: Health_potion
   m_TagString: Item
@@ -12863,6 +12864,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: 1
   itemType: 
+--- !u!114 &728766167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728766162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15d5e55c2a3f434c9f4ef3ae505c94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStackable: 1
+  countOfItem: 1
+  info: Esta posion te cura 5 puntos de vida.
+  player: {fileID: 0}
 --- !u!1001 &731880273
 Prefab:
   m_ObjectHideFlags: 0

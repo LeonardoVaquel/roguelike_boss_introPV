@@ -62,7 +62,15 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
-
+	public void UseItem(int position){
+		GameObject it;
+		if (inventory [position] != null) {
+			it = inventory [position];
+			it.SendMessage ("UseItem");
+			console.text = "Se uso "+ it.name + ".";
+			RemoveItem (it);
+		}
+	}
 
 
 

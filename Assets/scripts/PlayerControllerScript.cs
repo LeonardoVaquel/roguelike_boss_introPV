@@ -66,10 +66,17 @@ public class PlayerControllerScript : MonoBehaviour {
 
 	void checkHealth(){
 		if (health > 0) {
-			//health = health - 1;
-			//Debug.Log ("Tu vida actual es de " + health);
+			Debug.Log ("Tu vida actual es de " + health);
 		} else {
-			//Debug.Log ("MORISTE");
+			Debug.Log ("MORISTE");
+		}
+	}
+
+	public void heal(int n){
+		if (health + n > 10) {
+			health = 10;
+		} else {
+			health += n;
 		}
 	}
 
