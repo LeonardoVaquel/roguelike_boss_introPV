@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HealthBarController : MonoBehaviour {
 
     public Image currentHealthBar;
+	public Text hpVarValue;
     private PlayerStats playerStats;
 
     // Use this for initialization
@@ -22,6 +23,7 @@ public class HealthBarController : MonoBehaviour {
         if (playerStats.hp >= 0) {
             float ratio = (float)playerStats.hp / (float)playerStats.maxHP;
             currentHealthBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
+			hpVarValue.text = playerStats.hp.ToString();
 //            Debug.Log(ratio);
         }
     }

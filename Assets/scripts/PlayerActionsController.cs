@@ -45,12 +45,12 @@ public class PlayerActionsController : MonoBehaviour {
             stats.exp += enemyStats.exp;
         }
         // character stats
-        Debug.Log("str: " + stats.str);
-        Debug.Log("res: " + stats.res);
-        Debug.Log("mnd: " + stats.mnd);
-        Debug.Log("spr: " + stats.spr);
+       // Debug.Log("str: " + stats.str);
+       // Debug.Log("res: " + stats.res);
+       // Debug.Log("mnd: " + stats.mnd);
+       // Debug.Log("spr: " + stats.spr);
         //Debug.Log("damage: " + battleCalculator.MeleeAttackDamage());
-        Debug.Log("enemy hp:" + enemyStats.hp);
+        //Debug.Log("enemy hp:" + enemyStats.hp);
        // Debug.Log("EXP: " + stats.exp);
     }
 

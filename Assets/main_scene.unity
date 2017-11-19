@@ -2430,7 +2430,7 @@ MonoBehaviour:
   countOfItem: 1
   info: Esta posion te cura 5 puntos de vida.
   player: {fileID: 0}
-  player: {fileID: 0}
+  playerStats: {fileID: 0}
 --- !u!1 &739981211
 GameObject:
   m_ObjectHideFlags: 0
@@ -3758,6 +3758,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsCanvas: {fileID: 1867914556}
   statsScript: {fileID: 1317717308}
+  player: {fileID: 1317717297}
+  lvlValue: {fileID: 0}
+  expValue: {fileID: 0}
+  mpValue: {fileID: 0}
+  strValue: {fileID: 0}
+  resValue: {fileID: 0}
+  mndValue: {fileID: 0}
+  dexValue: {fileID: 0}
 --- !u!1 &1141293114
 GameObject:
   m_ObjectHideFlags: 0
@@ -4407,14 +4415,6 @@ MonoBehaviour:
   mnd: 0
   spr: 0
   dex: 0
-  lvlValue: {fileID: 928492909}
-  expValue: {fileID: 2057223802}
-  mpValue: {fileID: 934910936}
-  strValue: {fileID: 331835079}
-  resValue: {fileID: 1818191667}
-  mndValue: {fileID: 1141293116}
-  dexValue: {fileID: 1264896594}
-  statsCanvas: {fileID: 1867914556}
 --- !u!114 &1317717309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4449,6 +4449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealthBar: {fileID: 264617228}
+  hpVarValue: {fileID: 1241257747}
 --- !u!1 &1321131091
 GameObject:
   m_ObjectHideFlags: 0
@@ -6275,7 +6276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -0.9999771, y: -0.000024319}
+  m_AnchoredPosition: {x: -0.9999695, y: -0.000024319}
   m_SizeDelta: {x: 215.7, y: 31.9}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1864036241

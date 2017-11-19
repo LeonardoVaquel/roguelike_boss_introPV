@@ -11,7 +11,7 @@ public class GuiController : MonoBehaviour {
 	public PlayerStats statsScript;
 	public GameObject player;
 
-	//
+	// GUI objects
 	public Text lvlValue;
 	public Text expValue;
 	public Text mpValue;
@@ -20,19 +20,18 @@ public class GuiController : MonoBehaviour {
 	public Text mndValue;
 	public Text dexValue;
 
-	// Use this for initialization
 	void Start () {
 		statsCanvas = GameObject.Find ("StatsCanvas").GetComponent<Canvas> ();
 		statsScript = player.GetComponent<PlayerStats> ();
 		enableCanvas = false;
 		statsCanvas.gameObject.SetActive (false);
 	}
-	
-	// Update is called once per frame
+
 	void FixedUpdate () {
 		showCanvas ();
 	}
 
+	// opens canvas in game scene when pressing 'c'
 	void showCanvas(){
 		if (Input.GetKeyDown (KeyCode.C)) {
 			if (enableCanvas) {
@@ -40,19 +39,19 @@ public class GuiController : MonoBehaviour {
 				enableCanvas = false;
 			} else {
 				statsCanvas.gameObject.SetActive (true);
-				//statsScript.refreshStats ();
 				showPlayerStats();
 				enableCanvas = true;
 			}
 		} 
 	}
 
+
 	void showPlayerStats(){
 			getPlayerStatsTexts ();
 			refreshStats ();
-
 	}
 
+	// retrieves the text objects from the scene
 	void getPlayerStatsTexts(){
 		lvlValue 	= GameObject.Find ("LvlValue").GetComponent<Text> ();
 		expValue 	= GameObject.Find ("ExpValue").GetComponent<Text> ();
@@ -63,6 +62,7 @@ public class GuiController : MonoBehaviour {
 		dexValue	= GameObject.Find ("DexValue").GetComponent<Text> ();
 	}
 
+	// sets the values of the texts with the actual player stats values
 	public void refreshStats(){
 		lvlValue.text 	= statsScript.lvl.ToString ();
 		expValue.text	= statsScript.exp.ToString ();
