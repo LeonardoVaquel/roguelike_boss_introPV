@@ -946,7 +946,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fuerza
+  m_Text: Strength
 --- !u!222 &211212944
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1362,7 +1362,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Stats del Jugador
+  m_Text: Player stats
 --- !u!222 &385693161
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2104,7 +2104,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1719164586}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2250,7 +2250,7 @@ GameObject:
   - component: {fileID: 670410841}
   - component: {fileID: 670410840}
   m_Layer: 5
-  m_Name: EnergiaText
+  m_Name: ResText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2306,7 +2306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Energ\xEDa"
+  m_Text: Resistance
 --- !u!222 &670410841
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2888,7 +2888,7 @@ GameObject:
   - component: {fileID: 934910937}
   - component: {fileID: 934910936}
   m_Layer: 5
-  m_Name: EnergiaValue
+  m_Name: ResValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3018,7 +3018,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Vida
+  m_Text: HP
 --- !u!222 &936799985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3178,7 +3178,7 @@ GameObject:
   - component: {fileID: 982794379}
   - component: {fileID: 982794378}
   m_Layer: 5
-  m_Name: ResText
+  m_Name: SprText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3234,7 +3234,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Resistencia
+  m_Text: Spirit
 --- !u!222 &982794379
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3376,7 +3376,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Agilidad
+  m_Text: Dexterity
 --- !u!222 &1040394431
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3761,9 +3761,9 @@ MonoBehaviour:
   player: {fileID: 1317717297}
   lvlValue: {fileID: 0}
   expValue: {fileID: 0}
-  mpValue: {fileID: 0}
-  strValue: {fileID: 0}
   resValue: {fileID: 0}
+  strValue: {fileID: 0}
+  sprValue: {fileID: 0}
   mndValue: {fileID: 0}
   dexValue: {fileID: 0}
 --- !u!1 &1141293114
@@ -3777,7 +3777,7 @@ GameObject:
   - component: {fileID: 1141293117}
   - component: {fileID: 1141293116}
   m_Layer: 5
-  m_Name: MagicDamageValue
+  m_Name: MndValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5743,7 +5743,6 @@ RectTransform:
   - {fileID: 982794377}
   - {fileID: 1744601197}
   - {fileID: 960651777}
-  - {fileID: 1918949692}
   - {fileID: 652954563}
   m_Father: {fileID: 1766690055}
   m_RootOrder: 1
@@ -5833,7 +5832,7 @@ GameObject:
   - component: {fileID: 1744601199}
   - component: {fileID: 1744601198}
   m_Layer: 5
-  m_Name: MagicDamageText
+  m_Name: MndText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5889,7 +5888,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Da\xF1o M\xE1gico"
+  m_Text: Mind
 --- !u!222 &1744601199
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5979,7 +5978,7 @@ GameObject:
   - component: {fileID: 1818191668}
   - component: {fileID: 1818191667}
   m_Layer: 5
-  m_Name: ResValue
+  m_Name: SprValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6501,74 +6500,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1918949691
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1918949692}
-  - component: {fileID: 1918949694}
-  - component: {fileID: 1918949693}
-  m_Layer: 5
-  m_Name: StrPanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1918949692
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1918949691}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1719164586}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.060001, y: 142.70001}
-  m_SizeDelta: {x: 270, y: -56}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1918949693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1918949691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.14509805, g: 0.14509805, b: 0.14509805, a: 0.392}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 3
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1918949694
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1918949691}
 --- !u!1 &1918965056
 GameObject:
   m_ObjectHideFlags: 0
@@ -6967,7 +6898,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Estamina
+  m_Text: MP
 --- !u!222 &2045324876
 CanvasRenderer:
   m_ObjectHideFlags: 0

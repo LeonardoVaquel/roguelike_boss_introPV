@@ -14,9 +14,9 @@ public class GuiController : MonoBehaviour {
 	// GUI objects
 	public Text lvlValue;
 	public Text expValue;
-	public Text mpValue;
-	public Text strValue;
 	public Text resValue;
+	public Text strValue;
+	public Text sprValue;
 	public Text mndValue;
 	public Text dexValue;
 
@@ -55,10 +55,10 @@ public class GuiController : MonoBehaviour {
 	void getPlayerStatsTexts(){
 		lvlValue 	= GameObject.Find ("LvlValue").GetComponent<Text> ();
 		expValue 	= GameObject.Find ("ExpValue").GetComponent<Text> ();
-		mpValue		= GameObject.Find ("EnergiaValue").GetComponent<Text> ();
-		strValue	= GameObject.Find ("StrValue").GetComponent<Text> ();
 		resValue	= GameObject.Find ("ResValue").GetComponent<Text> ();
-		mndValue	= GameObject.Find ("MagicDamageValue").GetComponent<Text> ();
+		strValue	= GameObject.Find ("StrValue").GetComponent<Text> ();
+		sprValue	= GameObject.Find ("SprValue").GetComponent<Text> ();
+		mndValue	= GameObject.Find ("MndValue").GetComponent<Text> ();
 		dexValue	= GameObject.Find ("DexValue").GetComponent<Text> ();
 	}
 
@@ -66,9 +66,9 @@ public class GuiController : MonoBehaviour {
 	public void refreshStats(){
 		lvlValue.text 	= statsScript.lvl.ToString ();
 		expValue.text	= statsScript.exp.ToString ();
-		mpValue.text 	= statsScript.mp.ToString ();
+		resValue.text 	= statsScript.res.ToString ();
 		strValue.text	= statsScript.str.ToString ();
-		resValue.text	= statsScript.res.ToString ();
+		sprValue.text	= statsScript.spr.ToString ();
 		mndValue.text	= statsScript.mnd.ToString ();
 		dexValue.text	= statsScript.dex.ToString ();
 	}

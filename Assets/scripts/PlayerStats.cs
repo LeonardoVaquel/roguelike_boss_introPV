@@ -26,6 +26,7 @@ public class PlayerStats : MonoBehaviour {
 		mp = 30;
 		res = 8;
 		mnd = 1;
+		spr = 1;
 		dex = 5;
 	}
 }
