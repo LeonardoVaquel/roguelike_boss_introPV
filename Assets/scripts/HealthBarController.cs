@@ -22,7 +22,7 @@ public class HealthBarController : MonoBehaviour {
         if (playerStats.hp >= 0) {
             float ratio = (float)playerStats.hp / (float)playerStats.maxHP;
             currentHealthBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
-            Debug.Log(ratio);
+//            Debug.Log(ratio);
         }
     }
 }

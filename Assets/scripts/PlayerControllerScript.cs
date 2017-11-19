@@ -66,7 +66,7 @@ public class PlayerControllerScript : MonoBehaviour {
 
 	void checkHealth(){
 		if (health > 0) {
-			Debug.Log ("Tu vida actual es de " + health);
+			//Debug.Log ("Tu vida actual es de " + health);
 		} else {
 			Debug.Log ("MORISTE");
 		}
