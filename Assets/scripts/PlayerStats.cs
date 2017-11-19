@@ -18,17 +18,10 @@ public class PlayerStats : MonoBehaviour {
         public int spr;
         public int dex;
 
-	public Text lvlValue;
-	public Text expValue;
-	public Text mpValue;
-	public Text strValue;
-	public Text resValue;
-	public Text mndValue;
-	public Text dexValue;
-
-	public Canvas statsCanvas;
-
 	void Start(){
+		/*Debug.Log ("sdfjsajdaslkdjaslk");
+		Debug.Log (GameObject.Find ("StatsCanvas"));
+		string objectPath = "GUI/StatsCanvas/StatsPanel/StatsValues/";
 		lvlValue 	= GameObject.Find ("LvlValue").GetComponent<Text> ();
 		expValue 	= GameObject.Find ("ExpValue").GetComponent<Text> ();
 		mpValue		= GameObject.Find ("EnergiaValue").GetComponent<Text> ();
@@ -37,6 +30,8 @@ public class PlayerStats : MonoBehaviour {
 		mndValue	= GameObject.Find ("MagicDamageValue").GetComponent<Text> ();
 		dexValue	= GameObject.Find ("DexValue").GetComponent<Text> ();
 		statsCanvas = GameObject.Find ("StatsCanvas").GetComponent<Canvas> ();
+
+*/
 
 		lvl = 1;
 		exp = 0;
@@ -50,17 +45,15 @@ public class PlayerStats : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-
-		refreshStats ();
 	}
 
 	public void refreshStats(){
-		lvlValue.text 	= lvl.ToString ();
+/*		lvlValue.text 	= lvl.ToString ();
 		expValue.text	= exp.ToString ();
 		mpValue.text 	= mp.ToString ();
 		strValue.text	= str.ToString ();
 		resValue.text	= res.ToString ();
 		mndValue.text	= mnd.ToString ();
-		dexValue.text	= dex.ToString ();
+		dexValue.text	= dex.ToString (); */
 	}
 }
