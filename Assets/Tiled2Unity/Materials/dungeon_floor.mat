@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: DungeonCrawl_ProjectUtumnoTileset
+  m_Name: dungeon_floor
   m_Shader: {fileID: 4800000, guid: 5245ae2adfce6f04f91ba1b0be78d711, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 37bc1903503e31c4ab7888856a91e02e, type: 3}
+        m_Texture: {fileID: 2800000, guid: ebd4824b3e163794593267aa8acbc736, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
