@@ -9,7 +9,11 @@ public class Inventory : MonoBehaviour {
 	public int capacity = 0;
 	public Button[] InventoryButtons = new Button[10];
 	public Text console;
-	public PlayerInteraction playerInteractionScript = GameObject.FindObjectOfType<PlayerInteraction> ();
+	public PlayerInteraction playerInteractionScript;
+
+	void Start(){
+		playerInteractionScript = GameObject.FindObjectOfType<PlayerInteraction> ();
+	}
 
 	public void AddItem(Item item){
 		if (capacity < 10) {
