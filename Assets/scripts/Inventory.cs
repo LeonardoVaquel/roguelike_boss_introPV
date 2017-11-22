@@ -5,19 +5,38 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
 
-	public GameObject[] inventory = new GameObject[10];
+	public IList inventory = new ArrayList(10);
+	public int capacity = 0;
 	public Button[] InventoryButtons = new Button[10];
 	public Text console;
+	public PlayerInteraction playerInteractionScript = GameObject.FindObjectOfType<PlayerInteraction> ();
 
-	public void AddItem(GameObject item){
+	public void AddItem(Item item){
+		if (capacity < 10) {
+			inventory.Add (item);
+			int itemPosition = inventory.IndexOf (item);
+			console.text = itemPosition.ToString ();
+			InventoryButtons[itemPosition].image.overrideSprite = item.GetComponent<SpriteRenderer>().sprite;
+			capacity += 1;
+			item.SendMessage ("DoInteraction");
+			console.text = item.name + " Obtained";
+			playerInteractionScript.itemAdded ();
+		}
+	}
+
+
+
+	/*
+	public void AddItem(Item item){
 		bool itemAdded	= false;
 		// Agregar el item en el primer slot vacio.
-		for(int i=0; i < inventory.Length; i++){
+		for(int i=0; i < capacity; i++){
 			if(inventory[i] == null){
-				inventory [i] = item;
+				inventory.Add (item);
+				capacity += 1;
 				// Actualizar GUI.
 				InventoryButtons[i].image.overrideSprite = item.GetComponent<SpriteRenderer>().sprite;
-				console.text = "Se agrego " + item.name + " al inventario.";
+				console.text = item.name + " Obtained";
 				//Debug.Log (item.name + " se agrego a tu inventario.");
 				itemAdded	= true;
 				// Se elimina el item.
@@ -27,10 +46,10 @@ public class Inventory : MonoBehaviour {
 		}
 		// El inventario esta lleno.
 		if(!itemAdded){
-			console.text = "¡El inventario esta lleno!";
+			console.text = "¡Inventory is full !!";
 		}
 	}
-
+	/*
 	public bool FindItem(GameObject item){
 		for (int i = 0; i < inventory.Length; i++) {
 		
@@ -62,16 +81,16 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
+	
+*/
+
 	public void UseItem(int position){
-		GameObject it;
+		Item it;
 		if (inventory [position] != null) {
-			it = inventory [position];
+			it = (Item) inventory [position];
 			it.SendMessage ("UseItem");
 			console.text = "Se uso "+ it.name + ".";
-			RemoveItem (it);
+			//RemoveItem (it);
 		}
 	}
-
-
-
 }

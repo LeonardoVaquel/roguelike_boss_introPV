@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbstractItem : MonoBehaviour {
+public class Item : MonoBehaviour {
 	public bool isStackable;
 	public int countOfItem = 1;
 	public string info;
 	public GameObject player;
 
-	public AbstractItem(bool stackable, string inf){
+	public Item(bool stackable, string inf){
 		isStackable = stackable;
 		info = inf;
 	}

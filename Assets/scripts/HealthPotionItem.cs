@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthPotionItem : AbstractItem {
+public class HealthPotionItem : Item {
 	public PlayerStats playerStats;
 
 	public HealthPotionItem(): base(true, "Esta posion te cura 5 puntos de vida."){
