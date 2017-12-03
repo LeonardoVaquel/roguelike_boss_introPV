@@ -11,6 +11,7 @@ public class CameraFollow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		follow = GameObject.FindGameObjectWithTag ("Player");
 		
 	}
 	

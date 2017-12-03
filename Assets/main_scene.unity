@@ -3551,6 +3551,73 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1020780608}
+--- !u!1 &1038391520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1038391523}
+  - component: {fileID: 1038391522}
+  - component: {fileID: 1038391524}
+  m_Layer: 0
+  m_Name: dungeon_entry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1038391522
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1038391520}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.6264639}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0319729}
+  m_EdgeRadius: 0
+--- !u!4 &1038391523
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1038391520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 26.6, y: 8, z: -0.19140625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1038391524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1038391520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b58479a122ef94baf7899f495bf8f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: dungeon_1f_scene
 --- !u!1 &1040394428
 GameObject:
   m_ObjectHideFlags: 0
@@ -4159,11 +4226,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4755029462010148, guid: 1ae6de694d289424eabab77e0ae27be8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4755029462010148, guid: 1ae6de694d289424eabab77e0ae27be8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.04
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4755029462010148, guid: 1ae6de694d289424eabab77e0ae27be8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4415,6 +4482,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1293789582}
+  - component: {fileID: 1293789583}
   m_Layer: 0
   m_Name: GUI
   m_TagString: Untagged
@@ -4440,6 +4508,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1293789583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1293789581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56caac1c507e8b4c81146b1a0f76033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1317717297 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1840680583461414, guid: 1ae6de694d289424eabab77e0ae27be8,
@@ -4451,6 +4530,17 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1174985607}
   m_Script: {fileID: 11500000, guid: fd48a86d89699ff429f0189ec1ba064c, type: 3}
+--- !u!114 &1317717312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1317717297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56caac1c507e8b4c81146b1a0f76033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1321131091
 GameObject:
   m_ObjectHideFlags: 0

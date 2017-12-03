@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/main_scene.unity
     guid: 4e6562c5c9c3aad4daff101bda02cdbb
+  - enabled: 1
+    path: Assets/dungeon_1f_scene.unity
+    guid: e6979523192a87b43a551997282e81fc
+  - enabled: 1
+    path: Assets/boss_floor.unity
+    guid: 417eb2dfca3583942b86080518bd38c0

@@ -21,10 +21,12 @@ public class GuiController : MonoBehaviour {
 	public Text dexValue;
 
 	void Start () {
+		player = GameObject.FindGameObjectWithTag ("Player");
 		statsCanvas = GameObject.Find ("StatsCanvas").GetComponent<Canvas> ();
 		statsScript = player.GetComponent<PlayerStats> ();
 		enableCanvas = false;
-		statsCanvas.gameObject.SetActive (false);
+		//statsCanvas.gameObject.SetActive (false);
+		statsCanvas.gameObject.GetComponent<Canvas>().targetDisplay = 1;
 	}
 
 	void FixedUpdate () {
@@ -35,10 +37,12 @@ public class GuiController : MonoBehaviour {
 	void showCanvas(){
 		if (Input.GetKeyDown (KeyCode.C)) {
 			if (enableCanvas) {
-				statsCanvas.gameObject.SetActive (false);
+				//statsCanvas.gameObject.SetActive (false);
+				statsCanvas.gameObject.GetComponent<Canvas>().targetDisplay = 1;
 				enableCanvas = false;
 			} else {
-				statsCanvas.gameObject.SetActive (true);
+				//statsCanvas.gameObject.SetActive (true);
+				statsCanvas.gameObject.GetComponent<Canvas>().targetDisplay = 0;
 				showPlayerStats();
 				enableCanvas = true;
 			}

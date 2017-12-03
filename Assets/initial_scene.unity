@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b58479a122ef94baf7899f495bf8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelToLoad: 
 --- !u!114 &429795286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b58479a122ef94baf7899f495bf8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelToLoad: 
 --- !u!1 &767650342
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +551,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &791416788
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -879,6 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b58479a122ef94baf7899f495bf8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelToLoad: 
 --- !u!1 &1962757234
 GameObject:
   m_ObjectHideFlags: 0

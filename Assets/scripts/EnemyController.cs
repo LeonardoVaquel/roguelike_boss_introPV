@@ -55,7 +55,7 @@ public class EnemyController : MonoBehaviour {
         else {
            // Debug.Log("hay coli con player xq paso el sec");
             player.GetComponent<PlayerActionsController>().receiveAttack(damage);
-         //   Debug.Log(player.GetComponent<PlayerStats>().hp);
+            Debug.Log(player.GetComponent<PlayerStats>().hp);
             collisionTimer = 0f;
         }
     }
