@@ -8,6 +8,7 @@ TagManager:
   - Item
   - harm
   - Enemy
+  - DamageCollider
   layers:
   - Default
   - TransparentFX
