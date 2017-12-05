@@ -72,14 +72,20 @@ public class PlayerControllerScript : MonoBehaviour {
 		}
 	}
 
-	public void heal(int n){
-		if (health + n > 10) {
-			health = 10;
-		} else {
+	public void healthPlayer(int n){
+		if (health + n < 10) {
 			health += n;
+		} else {
+			health = 10;
 		}
 	}
 
-
+	public void recibeDamage(int damage){
+		if (health - damage > 0) {
+			health -= damage;
+		} else {
+			health = 0;
+		}
+	}
 
 }

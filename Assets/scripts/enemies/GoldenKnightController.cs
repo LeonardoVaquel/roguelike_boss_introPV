@@ -10,7 +10,13 @@ public class GoldenKnightController : MonoBehaviour {
 	GameObject player;
 	Rigidbody2D rb2d;
 	Animator anim;
-	Vector3 initialPosition;
+	Vector3 initialPosition, target;
+
+	[Tooltip("Prefab de la fireball que dispara el caballero")]
+	public GameObject fireBall;
+	[Tooltip("Velocidad con la que salen las bolas")]
+	public float attackSpeed;
+	bool attacking;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +28,7 @@ public class GoldenKnightController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 target = initialPosition;
+		target = initialPosition;
 
 		RaycastHit2D hit = Physics2D.Raycast (
 			                   transform.position,
@@ -44,11 +50,14 @@ public class GoldenKnightController : MonoBehaviour {
 		float distance = Vector3.Distance(target, transform.position);
 		Vector3 dir = (target - transform.position).normalized;
 
+		// Cuando el player entra en el radio de ataque.
 		if (target != initialPosition && distance < attackRadius) {
 			anim.SetFloat ("movX", dir.x);
 			anim.SetFloat ("movY", dir.y);
-			anim.Play ("Enemy_Walk", -1, 0);
+			anim.Play ("Golden_knight_BlendTree", -1, 0);
+			if (!attacking) { StartCoroutine (Attack (attackSpeed)); }
 		} else {
+			// Si el player no esta en el radio de ataque y esta en el radio de deteccion lo persigue.
 			rb2d.MovePosition (transform.position + dir * speed * Time.deltaTime);
 			anim.speed = 1;
 			anim.SetFloat ("movX", dir.x);
@@ -63,5 +72,20 @@ public class GoldenKnightController : MonoBehaviour {
 		}
 
 		Debug.DrawLine (transform.position, target, Color.green);
+	}
+
+	void OnDrawGizmosSelected(){
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere (transform.position, visionRadius);
+		Gizmos.DrawWireSphere (transform.position, attackRadius);
+	}
+
+	IEnumerator Attack(float seconds){
+		attacking = true;
+		if (target != initialPosition && fireBall != null) {
+			Instantiate (fireBall, transform.position, transform.rotation);
+			yield return new WaitForSeconds (seconds); // Espera <seconds> antes de volver a ejecutarse de nuevo.
+		}
+		attacking = false;
 	}
 }
