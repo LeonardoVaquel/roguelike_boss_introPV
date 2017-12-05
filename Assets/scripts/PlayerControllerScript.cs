@@ -51,13 +51,15 @@ public class PlayerControllerScript : MonoBehaviour {
 	}
 
 	void checkIsAttacking(){
-		if (Input.GetButtonDown ("Attack")) {
-			this.animator.SetBool ("isAttacking", true);
+		
+		AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+		bool isAttacking = stateInfo.IsName ("Player_attack");
+
+		if (!isAttacking && Input.GetButtonDown ("Attack")) {
+			animator.SetTrigger ("attacking");
 			this.audio.Play ();
 		}
-		if (Input.GetButtonUp ("Attack")) {
-			this.animator.SetBool ("isAttacking", false);
-		}
+
 	}
 
 	void stopWalkingAnimation(){
@@ -87,5 +89,6 @@ public class PlayerControllerScript : MonoBehaviour {
 			health = 0;
 		}
 	}
+		
 
 }
