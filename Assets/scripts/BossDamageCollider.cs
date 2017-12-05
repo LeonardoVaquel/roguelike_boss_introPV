@@ -20,22 +20,26 @@ public class BossDamageCollider : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D col){
-		//Debug.Log (gameObject.GetComponentInParent<BossController> ().state);
-		if (gameObject.GetComponentInParent<BossController> ().state != states.concentrating) {	
-			if (Time.time > nextAttack) {
-				gameObject.GetComponentInParent<BossController> ().state = states.melee;
-				gameObject.GetComponentInParent<Animator> ().SetBool ("attackingMelee", true);
-				Attack (col);
-				nextAttack = Time.time + meleeRate;
-				Debug.Log ("TOMAAAA c/u sec");
+		//Debug.Log (col.gameObject);
+		if (col.tag == "Player") {
+			if (gameObject.GetComponentInParent<BossController> ().state != states.concentrating) {	
+				if (Time.time > nextAttack) {
+					gameObject.GetComponentInParent<BossController> ().state = states.melee;
+					gameObject.GetComponentInParent<Animator> ().SetBool ("attackingMelee", true);
+					Attack (col);
+					nextAttack = Time.time + meleeRate;
+					Debug.Log ("TOMAAAA c/u sec");
+				}
+				//Debug.Log (Time.time);
 			}
-			//Debug.Log (Time.time);
 		}
 	}
 
 	void Attack(Collider2D col) {
-		col.GetComponent<PlayerActionsController>().receiveAttack(damage);
-		col.GetComponent<PlayerActionsController> ().EndCooldown ();
-		Debug.Log(col.GetComponent<PlayerStats>().hp);
+		if(col.tag == "Player"){
+			col.GetComponent<PlayerActionsController>().receiveAttack(damage);
+			col.GetComponent<PlayerActionsController> ().EndCooldown ();
+			Debug.Log(col.GetComponent<PlayerStats>().hp);
+		}
 	}
 }

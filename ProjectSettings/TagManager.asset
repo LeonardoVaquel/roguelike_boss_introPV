@@ -9,6 +9,9 @@ TagManager:
   - harm
   - Enemy
   - DamageCollider
+  - boots
+  - boss
+  - boomerang
   layers:
   - Default
   - TransparentFX
