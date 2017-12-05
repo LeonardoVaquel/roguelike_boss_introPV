@@ -6,11 +6,13 @@ public class PlayerControllerScript : MonoBehaviour {
 
 	public float speed = 5f;
 	public int health = 10;
+	public float cooldown = 0.0f;
 	public AudioSource audio;
 	public Animator animator;
 	public Rigidbody2D rigidBody;
 	public Collider2D collider;
 	private Vector2 movimiento;
+	bool puedoAtacar = true;
 
 	void Start () {
 		this.animator.GetComponent<Animator> ();
@@ -24,6 +26,7 @@ public class PlayerControllerScript : MonoBehaviour {
 		this.checkAnimation ();
 		this.checkIsAttacking ();
 		this.checkHealth ();
+		this.CheckCooldown ();
 	}
 
 	void checkMovement(){
@@ -55,11 +58,21 @@ public class PlayerControllerScript : MonoBehaviour {
 		AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 		bool isAttacking = stateInfo.IsName ("Player_attack");
 
-		if (!isAttacking && Input.GetButtonDown ("Attack")) {
+		if (!isAttacking && Input.GetButtonDown ("Attack") && puedoAtacar) {
 			animator.SetTrigger ("attacking");
 			this.audio.Play ();
+			puedoAtacar = false;
 		}
 
+	}
+
+	void CheckCooldown(){
+		if (cooldown > 0 && !puedoAtacar) {
+			cooldown -= 1 * Time.deltaTime;
+		} else {
+			puedoAtacar = true;
+			cooldown = 1.5f;
+		}
 	}
 
 	void stopWalkingAnimation(){
