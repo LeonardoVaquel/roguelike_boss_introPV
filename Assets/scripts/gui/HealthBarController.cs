@@ -12,6 +12,7 @@ public class HealthBarController : MonoBehaviour {
     // Use this for initialization
     void Start() {
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+		DontDestroyOnLoad (gameObject);
     }
 
     // Update is called once per frame

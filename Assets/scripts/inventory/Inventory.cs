@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour {
 
 	void Start(){
 		playerInteractionScript = GameObject.FindObjectOfType<PlayerInteraction> ();
+		DontDestroyOnLoad (gameObject);
 	}
 
 	public void AddItem(GameObject item){

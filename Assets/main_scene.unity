@@ -2193,7 +2193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418f7baad302c2d4baf38658ab57a7a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 1478199166}
+  rb2d: {fileID: 0}
   collider: {fileID: 0}
   player: {fileID: 0}
   enemy: {fileID: 0}
@@ -2201,6 +2201,10 @@ MonoBehaviour:
   enemySpriteRenderer: {fileID: 0}
   collisionTimer: 0
   collissionThreshold: 1
+  anim: {fileID: 0}
+  initialPosition: {x: 0, y: 0, z: 0}
+  target: {x: 0, y: 0, z: 0}
+  visionRadius: 7
   hp: 30
   exp: 10
   damage: 10

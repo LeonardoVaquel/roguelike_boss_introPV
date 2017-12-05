@@ -54,7 +54,7 @@ public class PlayerActionsController : MonoBehaviour {
     }
 
     void MeleeAttack(GameObject enemy) {
-        var enemyStats = enemy.GetComponent<EnemyController>();
+        var enemyStats = enemy.GetComponent<BatController>();
         enemyStats.hp -= battleCalculator.MeleeAttackDamage();
         if (enemyStats.hp <= 0) {
             stats.exp += enemyStats.exp;

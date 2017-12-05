@@ -8,7 +8,7 @@ public class InteractionObject : MonoBehaviour {
 	public string itemType;
 
 	void start(){
-		
+		DontDestroyOnLoad (gameObject);
 	}
 	public void DoInteraction(){
 		gameObject.GetComponent<SpriteRenderer> ().enabled = false;

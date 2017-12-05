@@ -27,6 +27,7 @@ public class GuiController : MonoBehaviour {
 		enableCanvas = false;
 		//statsCanvas.gameObject.SetActive (false);
 		statsCanvas.gameObject.GetComponent<Canvas>().targetDisplay = 1;
+		DontDestroyOnLoad (gameObject);
 	}
 
 	void FixedUpdate () {

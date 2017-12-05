@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldenKnightController : MonoBehaviour {
+public class BatController : MonoBehaviour {
 
 	public float visionRadius;
 	public int hp;
@@ -31,17 +31,17 @@ public class GoldenKnightController : MonoBehaviour {
 		exp = 30;
 		damage = 1;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		target = initialPosition;
 
 		RaycastHit2D hit = Physics2D.Raycast (
-			                   transform.position,
-			                   player.transform.position - transform.position,
-			                   visionRadius,
-			                   1 << LayerMask.NameToLayer ("Default")
-		                   );
+			transform.position,
+			player.transform.position - transform.position,
+			visionRadius,
+			1 << LayerMask.NameToLayer ("Default")
+		);
 
 		// Para ver debug del raycast.
 		Vector3 forward = transform.TransformDirection (player.transform.position - transform.position);

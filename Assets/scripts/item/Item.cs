@@ -15,6 +15,7 @@ public class Item : MonoBehaviour {
 
 	void Start(){
 		player = GameObject.FindGameObjectWithTag ("Player");
+		DontDestroyOnLoad (gameObject);
 	}
 		
 	public void increaseOnOne(){
