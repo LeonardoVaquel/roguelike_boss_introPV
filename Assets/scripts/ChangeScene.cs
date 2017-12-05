@@ -15,8 +15,8 @@ public class ChangeScene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown ("Submit")) {
-			SceneManager.LoadScene ("main_scene");
+		if (Input.GetMouseButtonDown(0)) {
+			SceneManager.LoadScene (levelToLoad);
 		}
 	}
 

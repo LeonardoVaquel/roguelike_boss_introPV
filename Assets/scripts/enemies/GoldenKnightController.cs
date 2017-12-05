@@ -5,6 +5,7 @@ using UnityEngine;
 public class GoldenKnightController : MonoBehaviour {
 
 	public float visionRadius;
+	int hp;
 	public float attackRadius;
 	public float speed;
 	GameObject player;
@@ -24,6 +25,7 @@ public class GoldenKnightController : MonoBehaviour {
 		rb2d	= GetComponent<Rigidbody2D> ();
 		anim	= GetComponent<Animator> ();
 		initialPosition	= transform.position;
+		hp = 50;
 	}
 	
 	// Update is called once per frame
@@ -72,6 +74,8 @@ public class GoldenKnightController : MonoBehaviour {
 		}
 
 		Debug.DrawLine (transform.position, target, Color.green);
+
+		checkkHP ();
 	}
 
 	void OnDrawGizmosSelected(){
@@ -88,4 +92,12 @@ public class GoldenKnightController : MonoBehaviour {
 		}
 		attacking = false;
 	}
+
+	void checkkHP(){
+		if (hp == 0) {
+			Destroy (gameObject);
+		}
+	}
+
 }
+
