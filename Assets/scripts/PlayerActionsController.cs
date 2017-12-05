@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerActionsController : MonoBehaviour {
 
@@ -8,6 +9,11 @@ public class PlayerActionsController : MonoBehaviour {
     private PlayerStats stats;
     private Rigidbody2D rigidBody;
     private Inventory inventory;
+	public SpriteRenderer renderer;
+	public bool receivingDamage = false;
+	public float invisibilityRate = 1f;
+	public float nextInvisibility = 0f;
+	public bool call = true;
 
     // Use this for initialization
     void Start() {
@@ -20,7 +26,16 @@ public class PlayerActionsController : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
-    }
+		//Debug.Log (" a ver esa invisibilidasd,sad,;sadd");
+	//	if(call) {
+			StartCoroutine(EndCooldown ());
+	//		call = false;
+	//}
+
+
+    
+	}
+
 
     void OnCollisionStay2D(Collision2D collision) {
         if (MeleeAttackAtEnemy(collision)) {
@@ -78,6 +93,36 @@ public class PlayerActionsController : MonoBehaviour {
     }
     */
     public void receiveAttack(int damage) {
-        stats.hp -= damage;
+		if (receivingDamage != true) {
+			Debug.Log (" aca entro");
+			stats.hp -= damage;
+			receivingDamage = true;
+			renderer.color = Color.red;
+		}
     }
+		
+
+	public IEnumerator EndCooldown() { 
+		
+		if (receivingDamage == true) {
+			yield return new WaitForSeconds (1);
+			call = true;
+			receivingDamage = false;
+			renderer.color = Color.white;
+		//	Debug.Log (" a ver esa invisibilidad");
+		}
+	}
+
+
+	public void WaitFor(){
+		// aproximadamente un segundo de espera
+		for (int i = 0; i <= 2; i++) {
+			if (Time.time > nextInvisibility) {
+				nextInvisibility = Time.time + invisibilityRate;
+				Debug.Log ("esperamos 5 sec");
+			}
+		}
+	}
+
+
 }

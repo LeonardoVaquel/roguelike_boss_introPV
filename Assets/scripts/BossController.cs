@@ -10,11 +10,13 @@ public class BossController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		state = states.idle;
+		state = "IDLE";
+		//Debug.Log ("WTF");
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+	//	Debug.Log (state);
 		
 	}
 

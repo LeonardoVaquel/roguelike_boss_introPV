@@ -5,9 +5,12 @@ using UnityEngine;
 public class BossDamageCollider : MonoBehaviour {
 
 	// Use this for initialization
+	public float collisionTimer;
+	public float collissionThreshold = 1f;
 	public BossStates states;
 	public float meleeRate = 1f;
 	public float nextAttack = 0f;
+	public int damage = 10;
 	void Start () {
 		
 	}
@@ -17,12 +20,22 @@ public class BossDamageCollider : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D col){
-		if (Time.time > nextAttack) {
-			gameObject.GetComponentInParent<BossController> ().state = states.melee;
-			gameObject.GetComponentInParent<Animator> ().SetBool ("attackingMelee", true);
-			nextAttack = Time.time + meleeRate;
-			Debug.Log ("TOMAAAA c/u sec");
+		//Debug.Log (gameObject.GetComponentInParent<BossController> ().state);
+		if (gameObject.GetComponentInParent<BossController> ().state != states.concentrating) {	
+			if (Time.time > nextAttack) {
+				gameObject.GetComponentInParent<BossController> ().state = states.melee;
+				gameObject.GetComponentInParent<Animator> ().SetBool ("attackingMelee", true);
+				Attack (col);
+				nextAttack = Time.time + meleeRate;
+				Debug.Log ("TOMAAAA c/u sec");
+			}
+			//Debug.Log (Time.time);
 		}
-		//Debug.Log (Time.time);
+	}
+
+	void Attack(Collider2D col) {
+		col.GetComponent<PlayerActionsController>().receiveAttack(damage);
+		col.GetComponent<PlayerActionsController> ().EndCooldown ();
+		Debug.Log(col.GetComponent<PlayerStats>().hp);
 	}
 }

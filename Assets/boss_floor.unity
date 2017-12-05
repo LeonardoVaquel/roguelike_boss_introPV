@@ -790,6 +790,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56caac1c507e8b4c81146b1a0f76033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &146712795 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212341357075101018, guid: 1ae6de694d289424eabab77e0ae27be8,
+    type: 2}
+  m_PrefabInternal: {fileID: 388884403}
 --- !u!1 &151732323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,6 +1434,16 @@ Prefab:
       propertyPath: m_SleepingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114714061747353008, guid: 1ae6de694d289424eabab77e0ae27be8,
+        type: 2}
+      propertyPath: receivingDamage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114714061747353008, guid: 1ae6de694d289424eabab77e0ae27be8,
+        type: 2}
+      propertyPath: renderer
+      value: 
+      objectReference: {fileID: 146712795}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ae6de694d289424eabab77e0ae27be8, type: 2}
   m_IsPrefabParent: 0
@@ -4381,9 +4396,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e6b59aca8091f48b57d7bc3c1328a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionTimer: 0
+  collissionThreshold: 1
   states: {fileID: 1313644811}
   meleeRate: 1
   nextAttack: 0
+  damage: 10
 --- !u!58 &1313644810
 CircleCollider2D:
   m_ObjectHideFlags: 0
