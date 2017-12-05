@@ -11,6 +11,6 @@ public class InteractionObject : MonoBehaviour {
 		
 	}
 	public void DoInteraction(){
-		gameObject.SetActive (false);
+		gameObject.GetComponent<SpriteRenderer> ().enabled = false;
 	}
 }

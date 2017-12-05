@@ -20,4 +20,8 @@ public class Item : MonoBehaviour {
 	public void increaseOnOne(){
 		countOfItem += 1;
 	}
+
+	public void destroy(){
+		gameObject.SetActive (false);
+	}
 }

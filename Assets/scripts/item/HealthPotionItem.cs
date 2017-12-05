@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthPotionItem : Item {
 	public PlayerStats playerStats;
 
-	public HealthPotionItem(): base(true, "Esta posion te cura 5 puntos de vida."){
+	public HealthPotionItem(): base(true, "Esta posion te cura 5 puntos de vida"){
 	}
 
 	void Start(){

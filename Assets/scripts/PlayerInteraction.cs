@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour {
 
-	public Item currentItem	= null;
+	public GameObject currentItem	= null;
 	public InteractionObject interactionObjectScript = null;
 	public Inventory inventory;
 	public AudioSource audio;
@@ -48,7 +48,7 @@ public class PlayerInteraction : MonoBehaviour {
 		// Se inicializa el objeto actual cuando el player coliciona con el item.
 		if (item.gameObject.tag == "Item") {
 			//Debug.Log (item.name);
-			currentItem = item.gameObject.GetComponent<Item>();
+			currentItem = item.gameObject;
 			interactionObjectScript	= currentItem.GetComponent<InteractionObject> ();
 		}
 	}
