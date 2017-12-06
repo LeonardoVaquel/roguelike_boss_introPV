@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 95835259718155620}
   - component: {fileID: 61701396618032144}
   - component: {fileID: 50036320800358518}
-  m_Layer: 0
+  - component: {fileID: 114336118073608608}
+  m_Layer: 9
   m_Name: white_dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1231196666591496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.73341, y: -3.5098367, z: 0}
+  m_LocalPosition: {x: -20.232307, y: 16.455961, z: -4.205078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,6 +106,25 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114336118073608608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1231196666591496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5819cfd265e51cb4797496fac6a3bed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionRadius: 5
+  hp: 0
+  exp: 0
+  damage: 0
+  attackRadius: 0
+  speed: 0
+  bullet: {fileID: 1503613804977452, guid: e02473cdffca32e4795d894908b6f5ed, type: 2}
+  attackSpeed: 2
 --- !u!212 &212610454976110778
 SpriteRenderer:
   m_ObjectHideFlags: 1

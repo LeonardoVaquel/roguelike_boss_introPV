@@ -123,6 +123,10 @@ public class PlayerControllerScript : MonoBehaviour {
 			health = 0;
 		}
 	}
+
+	public int getDamage(){
+		return stats.str;
+	}
 		
 
 }

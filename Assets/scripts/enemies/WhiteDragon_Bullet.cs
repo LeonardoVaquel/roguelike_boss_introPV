@@ -2,28 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBallController : MonoBehaviour {
+public class WhiteDragon_Bullet : MonoBehaviour {
 
 	[Tooltip("Velocidad de moviemiento en unidades del mundo")]
-	public float speed= 5;
+	public float speed;
 	GameObject player;
 	Rigidbody2D rb2d;
-	Vector3 target, dir;
+	public string dir;
 
+	// Use this for initialization
 	void Start () {
-		speed = 5;
 		rb2d = GetComponent<Rigidbody2D> ();
-		player = GameObject.FindGameObjectWithTag ("Player");
-		if (player != null) {
-			target = player.transform.position;
-			dir = (target - transform.position).normalized;
-		}
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
-		if (target != Vector3.zero) {
-			rb2d.MovePosition (transform.position + (dir * speed) * Time.deltaTime);
+		if (dir == "right") {
+			Vector2 mov = Vector2.right;
+			rb2d.MovePosition (rb2d.position + mov * speed * Time.deltaTime);
+		} else {
+			Vector2 mov = Vector2.left;
+			rb2d.MovePosition (rb2d.position + mov * speed * Time.deltaTime);
 		}
 	}
 
@@ -40,5 +38,9 @@ public class FireBallController : MonoBehaviour {
 	// Si sale de la pantalla se destruya la fireball.
 	void OnBecameInvisible(){
 		Destroy (gameObject);
+	}
+
+	public void setDir(string dir2){
+		dir = dir2;
 	}
 }
