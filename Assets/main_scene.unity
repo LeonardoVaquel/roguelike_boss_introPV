@@ -786,6 +786,7 @@ GameObject:
   - component: {fileID: 653438494}
   - component: {fileID: 653438495}
   - component: {fileID: 653438496}
+  - component: {fileID: 653438497}
   m_Layer: 0
   m_Name: Items
   m_TagString: Item
@@ -864,6 +865,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: 1
   itemType: 
+--- !u!114 &653438497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653438493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56caac1c507e8b4c81146b1a0f76033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &709501428
 Prefab:
   m_ObjectHideFlags: 0

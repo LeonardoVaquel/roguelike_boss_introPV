@@ -16,6 +16,7 @@ public class BossController : MonoBehaviour {
 	public float powerWaveRate = 1f;
 	public GameObject meleeCol;
 	public int hp;
+	public int maxhp;
 	public Transform firePoint1, firePoint2, firePoint3, firePoint4;
 	public GameObject boomerang;
 	public GameObject powerWave, powerWaveVertical;
