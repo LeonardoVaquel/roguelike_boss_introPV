@@ -34,6 +34,7 @@ public class WhiteDragon_Bullet : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+		
 
 	// Si sale de la pantalla se destruya la fireball.
 	void OnBecameInvisible(){

@@ -103,9 +103,9 @@ public class GoldenKnightController : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collider2D col){
-		if (col.CompareTag ("Player")) {
-			hp = hp - player.GetComponent<PlayerControllerScript> ().getDamage ();
+	void OnCollisionStay2D(Collision2D col){
+		if(col.gameObject.tag == "Player"){
+			Destroy (gameObject);
 		}
 	}
 
