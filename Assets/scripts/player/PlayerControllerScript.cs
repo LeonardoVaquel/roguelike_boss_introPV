@@ -13,6 +13,8 @@ public class PlayerControllerScript : MonoBehaviour {
 	public Collider2D collider;
 	private Vector2 movimiento;
 	bool puedoAtacar = true;
+	public PlayerStats stats;
+	public float time = 0f;
 
 	void Start () {
 		this.animator.GetComponent<Animator> ();
@@ -47,9 +49,28 @@ public class PlayerControllerScript : MonoBehaviour {
 
 	// Colición con objetos que sean límites.
 	void OnCollisionStay2D(Collision2D collision){
+		time += Time.deltaTime ;
 		if (this.collider.gameObject.tag == "Limit"){
 			rigidBody.velocity = new Vector2(0,0);
 			this.stopWalkingAnimation ();
+		}
+		AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+		bool isAttacking = stateInfo.IsName ("Player_attack");
+		if (collision.gameObject.tag == "boss" && isAttacking) {
+			if (time > 1) {
+			collision.gameObject.GetComponentInParent<BossController> ().hp -= stats.str;;
+		//	Debug.Log ("hp boss: " + collision.gameObject.GetComponentInParent<BossController>().hp);
+			time = 0f;
+			}
+		}
+
+	}
+
+	void OnTriggerEnter2D(Collider2D collision){
+	//	Debug.Log ("boom" + collision.gameObject.tag);
+		if (collision.gameObject.tag == "boomerang") {
+	//		Debug.Log ("hp" + stats.hp);
+			stats.hp -= 10;
 		}
 	}
 
@@ -71,7 +92,7 @@ public class PlayerControllerScript : MonoBehaviour {
 			cooldown -= 1 * Time.deltaTime;
 		} else {
 			puedoAtacar = true;
-			cooldown = 1.5f;
+			cooldown = 1f;
 		}
 	}
 

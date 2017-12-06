@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/boss_floor.unity
     guid: 417eb2dfca3583942b86080518bd38c0
+  - enabled: 0
+    path: Assets/controls_scene.unity
+    guid: 99c2b01301b99044fb16c46c1e26972a

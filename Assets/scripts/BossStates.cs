@@ -27,13 +27,13 @@ public class BossStates : MonoBehaviour {
 		dead = "DEAD";
 		states = new ArrayList ();
 		states.Add (idle);
-		states.Add (walking);
+	//	states.Add (walking);
 		states.Add (concentrating);
 		states.Add (powerwave);
 		states.Add (melee);
 		states.Add (boomerang);
-		states.Add (monsterspawning);
-		states.Add (dead);
+	//	states.Add (monsterspawning);
+	//	states.Add (dead);
 		/*
 		states = new ArrayList ();
 		states.Add ("IDLE");

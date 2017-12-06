@@ -23,8 +23,8 @@ public class FireObjectController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		
-		if(col.tag != "boss" && col.tag != "DamageCollider" && col.tag != "boomerang"){
-			Debug.Log(col.tag);
+		if(col.tag != "boss" && col.tag != "DamageCollider" && col.tag != "boomerang" ){
+//			Debug.Log(col.tag);
 			Destroy(gameObject);	
 		}
 

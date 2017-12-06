@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 02/12/2017 11:08:44 a.m.-->
+<!--Last exported: 05/12/2017 09:41:51 p.m.-->
 <Tiled2Unity version="1.0.13.0">
   <AssignMaterial mesh="boss_f_sq_mesh_0001" material="boss_floor" />
   <Prefab name="boss_f_sq" orientation="Orthogonal" staggerAxis="Y" staggerIndex="Odd" hexSideLength="0" numLayers="1" numTilesWide="20" numTilesHigh="20" tileWidth="32" tileHeight="32" exportScale="1" mapWidthInPixels="640" mapHeightInPixels="640" backgroundColor="#808080">
