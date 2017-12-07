@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour {
 
 	public string levelToLoad;
+	public Camera camara;
 
 	// Use this for initialization
 	void Start () {
 
-		
 	}
 	
 	// Update is called once per frame
@@ -27,6 +27,7 @@ public class ChangeScene : MonoBehaviour {
 		} else {
 			GameObject.FindGameObjectWithTag ("Player").gameObject.transform.position = new Vector3 (0f, 0f, 0f);
 		}
+		camara.GetComponent<AudioSource> ().Stop ();
 		SceneManager.LoadScene (levelToLoad);
 
 	}

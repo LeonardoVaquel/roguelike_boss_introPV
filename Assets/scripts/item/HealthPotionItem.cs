@@ -13,6 +13,6 @@ public class HealthPotionItem : Item {
 	}
 
 	public void UseItem ()	{
-		playerStats.hp = playerStats.hp + 5;
+		playerStats.hp = playerStats.hp + 40;
 	}
 }

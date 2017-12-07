@@ -27,7 +27,7 @@ public class WhiteDragon_Bullet : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.CompareTag ("Player") ) {
-			col.gameObject.SendMessage ("recibeDamage", 5);
+			col.gameObject.SendMessage ("receiveAttack", 5);
 			Destroy (gameObject);
 		}
 		if (col.CompareTag ("Limit")) {

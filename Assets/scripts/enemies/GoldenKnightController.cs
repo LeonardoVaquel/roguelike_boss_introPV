@@ -104,7 +104,8 @@ public class GoldenKnightController : MonoBehaviour {
 	}
 
 	void OnCollisionStay2D(Collision2D col){
-		if(col.gameObject.tag == "Player"){
+		if(col.gameObject.tag == "Player" && Input.GetKeyDown("z")){
+			col.gameObject.GetComponent<PlayerStats> ().exp += this.exp;
 			Destroy (gameObject);
 		}
 	}

@@ -29,6 +29,7 @@ public class PlayerControllerScript : MonoBehaviour {
 		this.checkIsAttacking ();
 		this.checkHealth ();
 		this.CheckCooldown ();
+		Debug.Log (stats.hp);
 	}
 
 	void checkMovement(){

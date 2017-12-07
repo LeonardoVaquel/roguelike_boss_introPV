@@ -20,6 +20,9 @@ public class BossController : MonoBehaviour {
 	public Transform firePoint1, firePoint2, firePoint3, firePoint4;
 	public GameObject boomerang;
 	public GameObject powerWave, powerWaveVertical;
+	public Canvas canvasWin;
+	bool isDead;
+	bool dead;
 
 
 
@@ -29,10 +32,15 @@ public class BossController : MonoBehaviour {
 		state = "MELEE";
 		//hp = 300;
 		//Debug.Log ("WTF");
+		canvasWin.gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		if (hp == 0) {
+			canvasWin.gameObject.SetActive (true);
+		}
 	//	Debug.Log (state);
 		//state = (string) states.states[Random.Range(0, 5)];
 		time += Time.deltaTime ;
@@ -117,6 +125,14 @@ public class BossController : MonoBehaviour {
 			animator.SetBool (anim, false);
 			state = states.dead;
 			animator.SetInteger ("hp", 0);
+
+//			AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+//			isDead = stateInfo.IsName ("death");
+//			if (isDead) {
+//				animator.SetBool ("isDead", true);
+//				Destroy (gameObject);
+//			}
+
 		}
 	}
 
